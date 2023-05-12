@@ -6,11 +6,9 @@ import { BeatLoader } from 'react-spinners'
 import '../styles/itemDetailContainer.css'
 
 const ItemDetailContainer = () => {
-    //state to save a product
     const [product, setProduct] = useState(null)
     const [isLoading, setIsLoading] = useState(true)
     const { pid } = useParams()
-    //Fetch product from Firebase
     useEffect(() => {
         const dbFirestore = getFirestore()
         const queryDoc = doc(dbFirestore, 'productos', pid)
@@ -18,7 +16,7 @@ const ItemDetailContainer = () => {
             .then(resp => setProduct({ id: resp.id, ...resp.data() }))
             .catch(error => { console.log(error) })
             .finally(() => setIsLoading(false))
-    }, [pid])
+    }, [])
     return (
         <>
             {isLoading ?
