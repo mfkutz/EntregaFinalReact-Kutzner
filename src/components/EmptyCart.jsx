@@ -1,11 +1,11 @@
 import { Link } from 'react-router-dom'
-/* import cartEmpty from '../assets/images/emptyCart.png' */
+import cartEmpty from '/public/emptycart.png'
 import '../styles/emptyCart.css'
 
 const EmptyCart = () => {
   return (
     <div className='empty-container'>
-      {/* <img src={cartEmpty} alt="Cart" /> */}
+      <img src={cartEmpty} alt="Cart" />
       <div className='container-button'>
         <Link to='/' className='back'>
           Ir al Inicio
